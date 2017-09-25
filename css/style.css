@@ -1,0 +1,83 @@
+*{
+	box-sizing : border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color:lavender;
+}
+.footer th,.footer td {
+	width: 33%;
+	padding-bottom: 10px;
+}
+
+.footer th {
+	padding-top: 30px;
+	font-size: 19px;
+}
+
+.footer td {
+	font-size : 12px;
+}
+
+.mainContent {
+    background-color:white;
+    padding:0; /* TIPs: add padding because col-md- has default padding value*/  
+}
+
+.page-tittle {
+    background-color: orange;
+}
+
+.page-tittle a {
+    color:white;
+    padding:0 10px 0 10px; 
+    font-size:17px;
+}
+
+.page-tittle a:nth-child(1) { /* TIPs: can use :first-child for this case*/
+    border-right: solid 1px white;
+}
+
+.main-content {
+    display:block;
+    overflow: auto; /* TIPs: overflow auto here will make father has the height of children, easy to make block*/
+}
+
+#mainContentColumn{
+    background-color:white;
+}
+
+#sideContentColumn {
+    background-color: white;
+}
+
+#sideContentColumn table {
+    width:100%;
+}
+
+#sideContentColumn table th {
+    background-color: #00918d;
+    font-size:17px;
+    color:white; 
+    padding-left: 5px;
+}
+
+#mainFooter {
+    background-color:#333; 
+    color: white;
+}
+
+#mainFooter table{
+    width:100%;
+    margin-left:20px;
+}
+
+#mainFooter #footPrint {
+    border-top: solid 2px white; 
+    margin: 0 20px 0 20px;
+}
+
+#mainFooter #footPrint div{
+    text-align:center;
+}

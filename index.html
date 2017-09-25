@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<!--this document include Bootstrap, Jquery, AngularJS 
+timming information:
+Create layout start at 10h00 pm
+content:
+Header
+Footer
+Main menu with responsive
+Main content with responsive
+Finish layout at 11h30 pm
+Next step: get client review.
+-->
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>Title of the document</title>
+<!-- CSS style start here -->
+<style>
+
+
+
+</style>
+<!-- CSS style end here -->
+</head>
+<body>
+<!-- html element start here -->
+
+
+<div class="container-fluid"> <!-- TIPs: main content must be placed inside .container-fluid .row to get RESPONSIVE design -->
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 mainContent">
+	<img src="headerPicture.jpg" alt="Vietel Picture" width="100%">
+		<!-- MAIN MENU BAR -->
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			<!-- this is the icon when menu is hidden -->
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			  </button>
+			  <!-- we should have WebSiteName, this will be show with icon when main menu disappear -->
+			  <a class="navbar-brand" href="#">WebSiteName</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav">
+				<li class="active"><a href="#" id="home">Home</a></li>
+				<!-- Main menu can have dropdown if needed
+				<li class="dropdown">
+				  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Page 1-1</a></li>
+					<li><a href="#">Page 1-2</a></li>
+					<li><a href="#">Page 1-3</a></li>
+				  </ul>
+				</li>
+				-->
+				<li><a href="#" id="page1">Page 1</a></li>
+				<li><a href="#" id="page2">Page 2</a></li>
+				<li><a href="#" id="page3">Page 3</a></li>
+			  </ul>			  
+			</div>
+		  </div>
+		</nav>
+		<!-- SUB TITTLE PICTURE -->
+		<img src="subHeaderPicture.jpg" alt="Vietel Picture" width="100%">
+		
+		<!-- NAV BAR -->
+		<p class="page-tittle" >
+			<a  href="#">Bang gia</a> <!-- TIPs: <a> element can contain text nicely, centrelize inside a rectangular-->
+			<a  href="#">Thu tuc dang ky</a>
+		</p>
+		
+		<!-- MAIN CONTENT PANEL -->
+		<div class="main-content"> 
+			<!-- MAIN CONTENT COLUMN -->
+			<div class="col-md-9"  id="mainContentColumn">
+				<!-- main content stay here -->
+				
+				
+				<!-- main content stay here -->
+			</div>
+			
+			<!-- SIDE CONTENT COLUMN -->
+			<div class="col-md-3" id="sideContentColumn">		
+				<table>
+					<tr><th >Lien He Ngay</th></tr><!-- TIPs: like <a>, table element can contain text nicely, centrelize inside a rectangular-->
+					<tr><td> <img src="new.gif" alt="New"> Sub content 1</td></tr>
+					<tr><td> <img src="new.gif" alt="New"> Sub content 1</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<!-- FOOTER -->
+		<div id="mainFooter">
+			<table class="footer">
+			  <tr>
+				<th>Company</th>
+				<th>Contact</th>
+				<th>Country</th>
+			  </tr>
+			  <tr>
+				<td>Alfreds Futterkiste</td>
+				<td>Maria Anders</td>
+				<td>Germany</td>
+			  </tr>
+			  <tr>
+				<td>Centro comercial Moctezuma</td>
+				<td>Francisco Chang</td>
+				<td>Mexico</td>
+			  </tr>			 
+			</table>
+			<div id="footPrint">
+				<div>Tong dai ho tro ky thuat</div>
+				<div>Copyright @ 2017 - Design by Jacky</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+<!-- html end -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script>
+// insert your script here
+// Next step: create data model for this design
+$("#myNavbar a").click(function(event) {
+	console.log(event.target.id);
+	var filename = "";
+	switch (event.target.id) {
+		case "page1" :
+			filename = 'view/mainPage.html';
+			break;
+		default:
+            filename = 'view/subPage.html';
+			break;
+	}
+	if (filename !== "") {
+		$.get(filename, function(data){
+		  //alert("Data: " + data);
+          $("#mainContentColumn").html(data);
+		});
+	}
+});
+
+// script end
+</script>
+</body>
+</html>
